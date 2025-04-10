@@ -1,0 +1,17 @@
+// 1.20.1	2025-04-10T21:20:46.2276908	Tags: exnihilotinkers
+813aa3d2bc3fe619c3917c0c6ccd7b670eb19dce data/exnihilosequentia/tags/items/crook.json
+3f5441682e3cd97bad1559732a8e63f308237456 data/exnihilosequentia/tags/items/hammer.json
+b91344546d08c2d57f000ca5a03566ba981de7ed data/exnihilosequentia/tags/items/pieces.json
+351f47b5f23ffd4eaff234d27e1fae43bf2922d8 data/exnihilotinkers/tags/items/casts/multi_use/crook_head.json
+9a045d7c0a2ffbd1062f6cbc3387f411c279ed5b data/exnihilotinkers/tags/items/casts/single_use/crook_head.json
+351f47b5f23ffd4eaff234d27e1fae43bf2922d8 data/tconstruct/tags/items/casts/gold.json
+f96e77966b74f7518ed98d1e0e55398f0ff669de data/tconstruct/tags/items/casts/red_sand.json
+bf37bcf283bc216b9dee93eb4e25e876ffa9a31e data/tconstruct/tags/items/casts/sand.json
+da76aa5ca097e93a4495e48eb3a7c88e1132cd60 data/tconstruct/tags/items/modifiable.json
+4fbf3c0e2d8db516f6f24c98bb2fc4ff9596d48e data/tconstruct/tags/items/modifiable/durability.json
+813aa3d2bc3fe619c3917c0c6ccd7b670eb19dce data/tconstruct/tags/items/modifiable/harvest.json
+4fbf3c0e2d8db516f6f24c98bb2fc4ff9596d48e data/tconstruct/tags/items/modifiable/harvest/primary.json
+3f5441682e3cd97bad1559732a8e63f308237456 data/tconstruct/tags/items/modifiable/harvest/stone.json
+4fbf3c0e2d8db516f6f24c98bb2fc4ff9596d48e data/tconstruct/tags/items/modifiable/melee.json
+4fbf3c0e2d8db516f6f24c98bb2fc4ff9596d48e data/tconstruct/tags/items/modifiable/multipart.json
+82a5f31897004bd8c4518066cec97443bddf34cc data/tconstruct/tags/items/parts.json

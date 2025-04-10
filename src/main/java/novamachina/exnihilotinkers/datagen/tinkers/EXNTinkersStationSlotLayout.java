@@ -1,9 +1,15 @@
 package novamachina.exnihilotinkers.datagen.tinkers;
 
-//TODO reanable when tinkers available for 1.18.2
-public class EXNTinkersStationSlotLayout { /*extends StationSlotLayoutProvider {
+import net.minecraft.data.PackOutput;
+import novamachina.exnihilotinkers.common.init.tconstruct.EXNTinkersTinkerItems;
+import slimeknights.tconstruct.tools.TinkerToolParts;
+import slimeknights.tconstruct.tools.data.StationSlotLayoutProvider;
 
-    public EXNTinkersStationSlotLayout(DataGenerator generator) {
+import javax.annotation.Nonnull;
+
+public class EXNTinkersStationSlotLayout extends StationSlotLayoutProvider {
+
+    public EXNTinkersStationSlotLayout(PackOutput generator) {
         super(generator);
     }
 
@@ -25,6 +31,6 @@ public class EXNTinkersStationSlotLayout { /*extends StationSlotLayoutProvider {
     @Override
     public String getName() {
         return "Tinkers Station Slot Layout for Ex Nihilo";
-    }*/
+    }
 
 }

@@ -1,0 +1,14 @@
+// 1.20.1	2025-04-10T20:10:47.7710545	Tool Recipes for Ex Nihilo
+6447ba14ad6e72239b0bcb4aa2695258b722da9c data/exnihilotinkers/recipes/smeltery/parts/gold/crook_head.json
+b381a978cafa914be62851d4e932467801def1ae data/exnihilotinkers/recipes/smeltery/parts/red_sand/builder_block/crook_head.json
+0f10ccc8c5b656f5dd12c7ee8df5039b50b21d8e data/exnihilotinkers/recipes/smeltery/parts/red_sand/builder_cast/crook_head.json
+20803424d3814935f9bee59cb4a3b0916bec4d8c data/exnihilotinkers/recipes/smeltery/parts/red_sand/molding/crook_head.json
+34552a7a109983a5f2baf003d6845019efa3ce54 data/exnihilotinkers/recipes/smeltery/parts/sand/builder_block/crook_head.json
+2d6788b3fdcaf27eee7d2d1c1637620b7c145d73 data/exnihilotinkers/recipes/smeltery/parts/sand/builder_cast/crook_head.json
+6112ddd654f1297c3657b890acd8b555e2a1db6d data/exnihilotinkers/recipes/smeltery/parts/sand/molding/crook_head.json
+140523ae2a2c75c76f273ca077e4dd317306cc6d data/exnihilotinkers/recipes/smeltery/tools/parts/builder/crook_head.json
+905f9dde99c69fdc1015e62c3a0fd9a4533dc068 data/exnihilotinkers/recipes/smeltery/tools/parts/casting/crook_head_composite.json
+24b55f52fe8fdae3462ea2111542f0ddc9f3bb00 data/exnihilotinkers/recipes/smeltery/tools/parts/casting/crook_head_gold_cast.json
+49ed7a286711559b2cc232a75ac44901dd3b8c74 data/exnihilotinkers/recipes/smeltery/tools/parts/casting/crook_head_sand_cast.json
+e7bb3929f15327e3aba5944ac14468c71969ef37 data/exnihilotinkers/recipes/tools/building/exn_crook.json
+1a58d55cff418966fc657f8c880074e6417fe6b9 data/exnihilotinkers/recipes/tools/building/exn_hammer.json

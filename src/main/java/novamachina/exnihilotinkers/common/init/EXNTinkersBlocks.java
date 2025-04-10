@@ -1,45 +1,46 @@
 package novamachina.exnihilotinkers.common.init;
 
-import com.mojang.logging.LogUtils;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
-import novamachina.exnihilosequentia.common.block.BaseBlock;
-import novamachina.exnihilosequentia.common.block.BlockSieve;
-import novamachina.exnihilosequentia.common.utility.ExNihiloLogger;
 import novamachina.exnihilotinkers.common.block.TinkersBarrelBlock;
 import novamachina.exnihilotinkers.common.block.TinkersCrucibleBlock;
 import novamachina.exnihilotinkers.common.block.TinkersSieveBlock;
 import novamachina.exnihilotinkers.common.utility.EXNTinkersConstants;
+import novamachina.novacore.core.registries.BlockRegistry;
+import novamachina.novacore.world.level.block.BlockDefinition;
+
+import java.util.List;
 
 public class EXNTinkersBlocks {
 
-  public static final DeferredRegister<Block> BLOCKS =
-      DeferredRegister.create(ForgeRegistries.BLOCKS, EXNTinkersConstants.ModIds.EX_NIHILO_TINKERS);
-  public static final RegistryObject<BlockSieve> SIEVE_BLOODSHROOM =
-      BLOCKS.register("bloodshroom_sieve", TinkersSieveBlock::new);
-  public static final RegistryObject<BlockSieve> SIEVE_GREENHEART =
-      BLOCKS.register("greenheart_sieve", TinkersSieveBlock::new);
-  public static final RegistryObject<BlockSieve> SIEVE_SKYROOT =
-      BLOCKS.register("skyroot_sieve", TinkersSieveBlock::new);
-  public static final RegistryObject<BaseBlock> BARREL_BLOODSHROOM =
-      BLOCKS.register("bloodshroom_barrel", TinkersBarrelBlock::new);
-  public static final RegistryObject<BaseBlock> BARREL_GREENHEART =
-      BLOCKS.register("greenheart_barrel", TinkersBarrelBlock::new);
-  public static final RegistryObject<BaseBlock> BARREL_SKYROOT =
-      BLOCKS.register("skyroot_barrel", TinkersBarrelBlock::new);
-  public static final RegistryObject<BaseBlock> CRUCIBLE_BLOODSHROOM =
-      BLOCKS.register("bloodshroom_crucible", TinkersCrucibleBlock::new);
-  public static final RegistryObject<BaseBlock> CRUCIBLE_GREENHEART =
-      BLOCKS.register("greenheart_crucible", TinkersCrucibleBlock::new);
-  public static final RegistryObject<BaseBlock> CRUCIBLE_SKYROOT =
-      BLOCKS.register("skyroot_crucible", TinkersCrucibleBlock::new);
-  private static final ExNihiloLogger logger = new ExNihiloLogger(LogUtils.getLogger());
+  private static final BlockRegistry BLOCKS =
+        new BlockRegistry(EXNTinkersConstants.ModIds.EX_NIHILO_TINKERS);
 
-  public static void init(IEventBus modEventBus) {
-    logger.debug("Register blocks");
-    BLOCKS.register(modEventBus);
+  public static final BlockDefinition<TinkersBarrelBlock> BLOODSHROOM_BARREL =
+          BLOCKS.block("Bloodshroom Barrel", "bloodshroom_barrel", TinkersBarrelBlock::new);
+  public static final BlockDefinition<TinkersBarrelBlock> ENDERBARK_BARREL =
+          BLOCKS.block("Enderbark Barrel", "enderbark_barrel", TinkersBarrelBlock::new);
+  public static final BlockDefinition<TinkersBarrelBlock> GREENHEART_BARREL =
+          BLOCKS.block("Greenheart Barrel", "greenheart_barrel", TinkersBarrelBlock::new);
+  public static final BlockDefinition<TinkersBarrelBlock> SKYROOT_BARREL =
+          BLOCKS.block("Skyroot Barrel", "skyroot_barrel", TinkersBarrelBlock::new);
+  public static final BlockDefinition<TinkersCrucibleBlock> BLOODSHROOM_CRUCIBLE =
+          BLOCKS.block("Bloodshroom Crucible", "bloodshroom_crucible", TinkersCrucibleBlock::new);
+  public static final BlockDefinition<TinkersCrucibleBlock> ENDERBARK_CRUCIBLE =
+          BLOCKS.block("Enderbark Crucible", "enderbark_crucible", TinkersCrucibleBlock::new);
+  public static final BlockDefinition<TinkersCrucibleBlock> GREENHEART_CRUCIBLE =
+          BLOCKS.block("Greenheart Crucible", "greenheart_crucible", TinkersCrucibleBlock::new);
+  public static final BlockDefinition<TinkersCrucibleBlock> SKYROOT_CRUCIBLE =
+          BLOCKS.block("Skyroot Crucible", "skyroot_crucible", TinkersCrucibleBlock::new);
+  public static final BlockDefinition<TinkersSieveBlock> BLOODSHROOM_SIEVE =
+          BLOCKS.block("Bloodshroom Sieve", "bloodshroom_sieve", TinkersSieveBlock::new);
+  public static final BlockDefinition<TinkersSieveBlock> ENDERBARK_SIEVE =
+          BLOCKS.block("Enderbark Sieve", "enderbark_sieve", TinkersSieveBlock::new);
+  public static final BlockDefinition<TinkersSieveBlock> GREENHEART_SIEVE =
+          BLOCKS.block("Greenheart Sieve", "greenheart_sieve", TinkersSieveBlock::new);
+  public static final BlockDefinition<TinkersSieveBlock> SKYROOT_SIEVE =
+          BLOCKS.block("Skyroot Sieve", "skyroot_sieve", TinkersSieveBlock::new);
+
+  public static List<BlockDefinition<? extends Block>> getDefinitions() {
+    return BLOCKS.getRegistry();
   }
 }

@@ -11,17 +11,14 @@ import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.material.Material;
-import novamachina.exnihilosequentia.common.block.CrucibleBaseBlock;
-import novamachina.exnihilosequentia.common.builder.BlockBuilder;
+import novamachina.exnihilosequentia.world.level.block.CrucibleBlock;
 import novamachina.exnihilotinkers.common.blockentity.TinkersCrucibleEntity;
 
-public class TinkersCrucibleBlock extends CrucibleBaseBlock implements EntityBlock {
+public class TinkersCrucibleBlock extends CrucibleBlock implements EntityBlock {
 
   public TinkersCrucibleBlock() {
-    super(new BlockBuilder().properties(
-        BlockBehaviour.Properties.of(Material.WOOD).strength(.75F)
-            .sound(SoundType.STONE).noOcclusion()));
+    super(BlockBehaviour.Properties.of().strength(.75F)
+            .sound(SoundType.STONE).noOcclusion());
   }
 
   @Nullable

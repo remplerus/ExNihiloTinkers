@@ -1,19 +1,20 @@
 package novamachina.exnihilotinkers.datagen.client;
 
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
-import novamachina.exnihilosequentia.common.utility.ExNihiloConstants;
-import novamachina.exnihilosequentia.datagen.api.datagen.AbstractOreItemGenerator;
 import novamachina.exnihilotinkers.common.init.EXNTinkersItems;
+import novamachina.exnihilotinkers.common.utility.EXNTinkersConstants;
 
-public class EXNTinkersOreItems extends AbstractOreItemGenerator {
+public class EXNTinkersOreItems extends ItemModelProvider {
 
-  public EXNTinkersOreItems(DataGenerator generator, ExistingFileHelper existingFileHelper) {
-    super(generator, ExNihiloConstants.ModIds.EX_NIHILO_SEQUENTIA, existingFileHelper);
+  public EXNTinkersOreItems(PackOutput generator, ExistingFileHelper existingFileHelper) {
+    super(generator, EXNTinkersConstants.ModIds.EX_NIHILO_TINKERS, existingFileHelper);
   }
 
   @Override
   protected void registerModels() {
-//    registerPiece(EXNTinkersItems.COBALT);
+    this.singleTexture(EXNTinkersItems.COBALT.getPieceId(), new ResourceLocation("item/handheld"), "layer0", new ResourceLocation(this.modid, "item/" + EXNTinkersItems.COBALT.getPieceId()));
   }
 }

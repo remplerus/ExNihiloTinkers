@@ -1,23 +1,23 @@
 modLoader = "javafml" #mandatory
 loaderVersion = "${loader_version_range}" #mandatory
 license = "${mod_license}"
-issueTrackerURL = "${git_url}/issues" #optional
+issueTrackerURL = "https://github.com/NovaMachina-Mods/ExNihiloTinkers/issues" #optional
 [[mods]] #mandatory
-modId="${mod_id}" #mandatory
-version="${mod_version}" #mandatory
-displayName="${mod_name}" #mandatory
-displayURL = "${curseforge_url}" #optional
+modId="exnihilotinkers" #mandatory
+version="1.0.0" #mandatory
+displayName="Ex Nihilo Sequentia - Tinkers Addon" #mandatory
+#displayURL = "${curseforge_url}" #optional
 logoFile = "logo.png" #optional
-authors="${mod_authors}" #optional
+#authors="${mod_authors}" #optional
 # The description text for the mod (multi line!) (#mandatory)
 description='''${mod_description}'''
-[[dependencies.${mod_id}]] #optional
+[[dependencies.exnihilotinkers]] #optional
 modId = "exnihilosequentia"
-mandatory = true
+mandatory = false
 versionRange = "${ex_nihilo_version}"
 ordering = "AFTER"
 side = "BOTH"
-[[dependencies.${mod_id}]] #optional
+[[dependencies.exnihilotinkers]] #optional
 modId = "tconstruct"
 mandatory = true
 versionRange = "${tinkers_version}"

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "exnihilosequentia",
+  "key": {
+    "x": {
+      "item": "exnihilotinkers:cobalt_pieces"
+    }
+  },
+  "pattern": [
+    "xx",
+    "xx"
+  ],
+  "result": {
+    "item": "tconstruct:raw_cobalt"
+  },
+  "show_notification": true
+}

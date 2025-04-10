@@ -1,0 +1,8 @@
+{
+  "parent": "exnihilosequentia:block/sieve_base",
+  "render_type": "minecraft:cutout_mipped",
+  "textures": {
+    "particle": "tconstruct:block/wood/greenheart/stripped_log",
+    "texture": "tconstruct:block/wood/greenheart/stripped_log"
+  }
+}

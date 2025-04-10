@@ -11,16 +11,13 @@ import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.material.Material;
-import novamachina.exnihilosequentia.common.block.BlockBarrel;
-import novamachina.exnihilosequentia.common.builder.BlockBuilder;
+import novamachina.exnihilosequentia.world.level.block.BarrelBlock;
 import novamachina.exnihilotinkers.common.blockentity.TinkersBarrelEntity;
 
-public class TinkersBarrelBlock extends BlockBarrel implements EntityBlock {
+public class TinkersBarrelBlock extends BarrelBlock implements EntityBlock {
 
   public TinkersBarrelBlock() {
-    super(new BlockBuilder().properties(
-        BlockBehaviour.Properties.of(Material.WOOD).strength(0.75F).sound(SoundType.WOOD)));
+    super(BlockBehaviour.Properties.of().strength(0.75F).sound(SoundType.WOOD));
   }
 
 

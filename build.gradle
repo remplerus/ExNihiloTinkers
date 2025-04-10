@@ -19,6 +19,9 @@ group = mod_group_id
 
 repositories {
     mavenLocal()
+    flatDir {
+        dirs 'libs'
+    }
     maven {
         name 'NovaMachina Mods - Snapshot'
         url 'https://dl.cloudsmith.io/public/novamachina-mods/snapshot/maven/'
@@ -144,7 +147,8 @@ dependencies {
     // modCompileOnly "mezz.jei:jei-${mc_version}-neoforge-api:${jei_version}"
     // We add the full version to localRuntime, not runtimeOnly, so that we do not publish a dependency on it
     // modLocalRuntime "mezz.jei:jei-${mc_version}-neoforge:${jei_version}"
-    modImplementation "novamachina.exnihilosequentia:exnihilosequentia:${exnihilo_version}"
+    //modImplementation "curse.maven:exnihilo-400012:5988562"
+    modImplementation "curse.maven:novacore-923669:4815411"
 
     modImplementation "curse.maven:tinkers-74072:6266282"
     modImplementation "curse.maven:mantle-74924:6258424"
@@ -152,6 +156,7 @@ dependencies {
     // This maps to ./libs/coolmod-${mc_version}-${coolmod_version}.jar
     // The group id is ignored when searching -- in this case, it is "blank"
     // modImplementation "blank:coolmod-${mc_version}:${coolmod_version}"
+    modImplementation 'blank:exnihilosequentia:1.20.1-5.0.0.build.SNAPSHOT'
 
     // Example mod dependency using a file as dependency
     // modImplementation files("libs/coolmod-${mc_version}-${coolmod_version}.jar")

@@ -5,26 +5,46 @@ import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import novamachina.exnihilosequentia.common.utility.Config;
-import novamachina.exnihilosequentia.common.utility.ExNihiloLogger;
+import novamachina.exnihilosequentia.common.Config;
+import novamachina.exnihilotinkers.common.init.tconstruct.EXNTinkersTinkerItems;
 import novamachina.exnihilotinkers.common.utility.EXNTinkersConfig;
 import novamachina.exnihilotinkers.common.utility.EXNTinkersConstants;
+import novamachina.novacore.core.IRegistry;
+import novamachina.novacore.world.item.CreativeModeTabDefinition;
+import novamachina.novacore.world.item.ItemDefinition;
+import novamachina.novacore.world.level.block.BlockDefinition;
+import org.slf4j.Logger;
 
 @Mod.EventBusSubscriber(
     modid = EXNTinkersConstants.ModIds.EX_NIHILO_TINKERS,
     bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class EXNTinkersInit {
 
-  private static final ExNihiloLogger logger = new ExNihiloLogger(LogUtils.getLogger());
+  private static final Logger logger = LogUtils.getLogger();
 
   private EXNTinkersInit() {}
 
   public static void init(IEventBus eventBus) {
     EXNTinkersBlockEntites.init(eventBus);
-    EXNTinkersBlocks.init(eventBus);
-    EXNTinkersItems.init(eventBus);
-    // TODO reanable when tinkers available for 1.18.2
-    // EXNTinkersTinkerItems.init(eventBus);
+    EXNTinkersTinkerItems.init(eventBus);
+  }
+
+  public static void initItems(IRegistry<ItemDefinition<?>> registry) {
+    for (ItemDefinition<?> definition : EXNTinkersItems.getDefinitions()) {
+      registry.register(definition);
+    }
+  }
+
+  public static void initCreative(IRegistry<CreativeModeTabDefinition> registry) {
+    for (CreativeModeTabDefinition definition : EXNTinkersCreativeModTab.getDefinitions()) {
+      registry.register(definition);
+    }
+  }
+
+  public static void initBlocks(IRegistry<BlockDefinition<?>> registry) {
+    for (BlockDefinition<?> definition : EXNTinkersBlocks.getDefinitions()) {
+      registry.register(definition);
+    }
   }
 
   @SubscribeEvent

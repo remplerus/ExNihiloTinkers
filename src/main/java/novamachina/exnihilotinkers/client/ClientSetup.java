@@ -9,10 +9,10 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import novamachina.exnihilosequentia.client.render.BarrelRender;
 import novamachina.exnihilosequentia.client.render.CrucibleRender;
 import novamachina.exnihilosequentia.client.render.SieveRender;
-import novamachina.exnihilosequentia.common.utility.ExNihiloLogger;
 import novamachina.exnihilotinkers.common.init.EXNTinkersBlockEntites;
 import novamachina.exnihilotinkers.common.init.EXNTinkersBlocks;
 import novamachina.exnihilotinkers.common.utility.EXNTinkersConstants;
+import org.slf4j.Logger;
 
 @Mod.EventBusSubscriber(
     modid = EXNTinkersConstants.ModIds.EX_NIHILO_TINKERS,
@@ -20,31 +20,37 @@ import novamachina.exnihilotinkers.common.utility.EXNTinkersConstants;
     bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ClientSetup {
 
-  private static final ExNihiloLogger logger = new ExNihiloLogger(LogUtils.getLogger());
+  public static final Logger logger = LogUtils.getLogger();
 
   private ClientSetup() {}
 
   public static void init(final FMLClientSetupEvent event) {
     logger.debug("Initializing client renderers");
 
-    ItemBlockRenderTypes.setRenderLayer(
-        EXNTinkersBlocks.SIEVE_BLOODSHROOM.get(), RenderType.cutoutMipped());
-    ItemBlockRenderTypes.setRenderLayer(
-        EXNTinkersBlocks.SIEVE_GREENHEART.get(), RenderType.cutoutMipped());
-    ItemBlockRenderTypes.setRenderLayer(
-        EXNTinkersBlocks.SIEVE_SKYROOT.get(), RenderType.cutoutMipped());
-    ItemBlockRenderTypes.setRenderLayer(
-        EXNTinkersBlocks.CRUCIBLE_BLOODSHROOM.get(), RenderType.cutoutMipped());
-    ItemBlockRenderTypes.setRenderLayer(
-        EXNTinkersBlocks.CRUCIBLE_GREENHEART.get(), RenderType.cutoutMipped());
-    ItemBlockRenderTypes.setRenderLayer(
-        EXNTinkersBlocks.CRUCIBLE_SKYROOT.get(), RenderType.cutoutMipped());
-    ItemBlockRenderTypes.setRenderLayer(
-        EXNTinkersBlocks.BARREL_BLOODSHROOM.get(), RenderType.cutoutMipped());
-    ItemBlockRenderTypes.setRenderLayer(
-        EXNTinkersBlocks.BARREL_GREENHEART.get(), RenderType.cutoutMipped());
-    ItemBlockRenderTypes.setRenderLayer(
-        EXNTinkersBlocks.BARREL_SKYROOT.get(), RenderType.cutoutMipped());
+    //ItemBlockRenderTypes.setRenderLayer(
+    //    EXNTinkersBlocks.BLOODSHROOM_SIEVE.block(), RenderType.cutoutMipped());
+    //ItemBlockRenderTypes.setRenderLayer(
+    //    EXNTinkersBlocks.ENDERBARK_SIEVE.block(), RenderType.cutoutMipped());
+    //ItemBlockRenderTypes.setRenderLayer(
+    //    EXNTinkersBlocks.GREENHEART_SIEVE.block(), RenderType.cutoutMipped());
+    //ItemBlockRenderTypes.setRenderLayer(
+    //    EXNTinkersBlocks.SKYROOT_SIEVE.block(), RenderType.cutoutMipped());
+    //ItemBlockRenderTypes.setRenderLayer(
+    //        EXNTinkersBlocks.BLOODSHROOM_CRUCIBLE.block(), RenderType.cutoutMipped());
+    //ItemBlockRenderTypes.setRenderLayer(
+    //        EXNTinkersBlocks.ENDERBARK_CRUCIBLE.block(), RenderType.cutoutMipped());
+    //ItemBlockRenderTypes.setRenderLayer(
+    //    EXNTinkersBlocks.GREENHEART_CRUCIBLE.block(), RenderType.cutoutMipped());
+    //ItemBlockRenderTypes.setRenderLayer(
+    //    EXNTinkersBlocks.SKYROOT_CRUCIBLE.block(), RenderType.cutoutMipped());
+    //ItemBlockRenderTypes.setRenderLayer(
+    //        EXNTinkersBlocks.BLOODSHROOM_BARREL.block(), RenderType.cutoutMipped());
+    //ItemBlockRenderTypes.setRenderLayer(
+    //        EXNTinkersBlocks.ENDERBARK_BARREL.block(), RenderType.cutoutMipped());
+    //ItemBlockRenderTypes.setRenderLayer(
+    //    EXNTinkersBlocks.GREENHEART_BARREL.block(), RenderType.cutoutMipped());
+    //ItemBlockRenderTypes.setRenderLayer(
+    //    EXNTinkersBlocks.SKYROOT_BARREL.block(), RenderType.cutoutMipped());
 
     SieveRender.register(EXNTinkersBlockEntites.TINKERS_SIEVES.get());
     BarrelRender.register(EXNTinkersBlockEntites.TINKERS_BARRELS.get());

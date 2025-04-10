@@ -6,15 +6,15 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import novamachina.exnihilosequentia.common.utility.ExNihiloLogger;
 import novamachina.exnihilotinkers.common.blockentity.TinkersBarrelEntity;
 import novamachina.exnihilotinkers.common.blockentity.TinkersCrucibleEntity;
 import novamachina.exnihilotinkers.common.blockentity.TinkersSieveEntity;
 import novamachina.exnihilotinkers.common.utility.EXNTinkersConstants;
+import org.slf4j.Logger;
 
 public class EXNTinkersBlockEntites {
 
-  private static final ExNihiloLogger logger = new ExNihiloLogger(LogUtils.getLogger());
+  private static final Logger logger = LogUtils.getLogger();
   private static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES =
       DeferredRegister.create(
           ForgeRegistries.BLOCK_ENTITY_TYPES, EXNTinkersConstants.ModIds.EX_NIHILO_TINKERS);
@@ -30,9 +30,10 @@ public class EXNTinkersBlockEntites {
           () ->
               BlockEntityType.Builder.of(
                       TinkersSieveEntity::new,
-                      EXNTinkersBlocks.SIEVE_BLOODSHROOM.get(),
-                      EXNTinkersBlocks.SIEVE_GREENHEART.get(),
-                      EXNTinkersBlocks.SIEVE_SKYROOT.get())
+                              EXNTinkersBlocks.BLOODSHROOM_SIEVE.block(),
+                              EXNTinkersBlocks.ENDERBARK_SIEVE.block(),
+                      EXNTinkersBlocks.GREENHEART_SIEVE.block(),
+                      EXNTinkersBlocks.SKYROOT_SIEVE.block())
                   .build(null));
   public static final RegistryObject<BlockEntityType<TinkersCrucibleEntity>> TINKERS_CRUCIBLES =
       BLOCK_ENTITIES.register(
@@ -40,9 +41,10 @@ public class EXNTinkersBlockEntites {
           () ->
               BlockEntityType.Builder.of(
                       TinkersCrucibleEntity::new,
-                      EXNTinkersBlocks.CRUCIBLE_BLOODSHROOM.get(),
-                      EXNTinkersBlocks.CRUCIBLE_GREENHEART.get(),
-                      EXNTinkersBlocks.CRUCIBLE_SKYROOT.get())
+                              EXNTinkersBlocks.BLOODSHROOM_CRUCIBLE.block(),
+                              EXNTinkersBlocks.ENDERBARK_CRUCIBLE.block(),
+                      EXNTinkersBlocks.GREENHEART_CRUCIBLE.block(),
+                      EXNTinkersBlocks.SKYROOT_CRUCIBLE.block())
                   .build(null));
   public static final RegistryObject<BlockEntityType<TinkersBarrelEntity>> TINKERS_BARRELS =
       BLOCK_ENTITIES.register(
@@ -50,8 +52,9 @@ public class EXNTinkersBlockEntites {
           () ->
               BlockEntityType.Builder.of(
                       TinkersBarrelEntity::new,
-                      EXNTinkersBlocks.BARREL_BLOODSHROOM.get(),
-                      EXNTinkersBlocks.BARREL_GREENHEART.get(),
-                      EXNTinkersBlocks.BARREL_SKYROOT.get())
+                              EXNTinkersBlocks.BLOODSHROOM_BARREL.block(),
+                              EXNTinkersBlocks.ENDERBARK_BARREL.block(),
+                      EXNTinkersBlocks.GREENHEART_BARREL.block(),
+                      EXNTinkersBlocks.SKYROOT_BARREL.block())
                   .build(null));
 }
