@@ -13,6 +13,7 @@ import novamachina.exnihilotinkers.client.ClientSetup;
 import novamachina.exnihilotinkers.common.init.EXNTinkersInit;
 import novamachina.exnihilotinkers.common.utility.EXNTinkersConfig;
 import novamachina.exnihilotinkers.common.utility.EXNTinkersConstants;
+import novamachina.novacore.bootstrap.ForgeBlockEntityTypeRegistry;
 import novamachina.novacore.bootstrap.ForgeBlockRegistry;
 import novamachina.novacore.bootstrap.ForgeCreativeModeTabRegistry;
 import novamachina.novacore.bootstrap.ForgeItemRegistry;
@@ -33,12 +34,14 @@ public class EXNTinkers {
     }
     EXNTinkersConfig.loadConfig(
         EXNTinkersConfig.COMMON_CONFIG, path.resolve("exntinkers-common.toml"));
-    EXNTinkersInit.init(FMLJavaModLoadingContext.get().getModEventBus());
     FMLJavaModLoadingContext.get().getModEventBus()
       .addListener(
         (RegisterEvent event) -> {
           if (event.getRegistryKey().equals(BuiltInRegistries.BLOCK.key())) {
             EXNTinkersInit.initBlocks(new ForgeBlockRegistry());
+          }
+          if (event.getRegistryKey().equals(BuiltInRegistries.BLOCK_ENTITY_TYPE.key())) {
+              EXNTinkersInit.initEntities(new ForgeBlockEntityTypeRegistry());
           }
           if (event.getRegistryKey().equals(BuiltInRegistries.ITEM.key())) {
             EXNTinkersInit.initItems(new ForgeItemRegistry());
@@ -48,6 +51,7 @@ public class EXNTinkers {
           }
         }
       );
+    EXNTinkersInit.init(FMLJavaModLoadingContext.get().getModEventBus());
     FMLJavaModLoadingContext.get().getModEventBus().addListener(ClientSetup::init);
   }
 }

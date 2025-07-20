@@ -21,7 +21,7 @@ public class EXNTinkersTinkerItems extends TinkerModule {
     public static final ItemDeferredRegisterExtension ITEMS = new ItemDeferredRegisterExtension(EXNTinkersConstants.ModIds.EX_NIHILO_TINKERS);
     private static final Item.Properties PART_PROPERTIES = new Item.Properties();
     private static final Item.Properties SMELTERY_PROPERTIES = new Item.Properties();
-    private static final Supplier<Item.Properties> TOOL = () -> new Item.Properties();
+    private static final Supplier<Item.Properties> TOOL = Item.Properties::new;
 
     public static final ItemObject<ModifiableItem> exnCrook = ITEMS.register("exn_crook", () -> new ModifiableItem(TOOL.get(), ToolDefinitions.exnCrook));
     public static final ItemObject<ModifiableItem> exnHammer = ITEMS.register("exn_hammer", () -> new ModifiableItem(TOOL.get(), ToolDefinitions.exnHammer));

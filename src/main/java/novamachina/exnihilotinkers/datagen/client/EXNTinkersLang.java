@@ -49,5 +49,6 @@ public class EXNTinkersLang extends AbstractLangGenerator {
                 "The Crook is a precision leaf cutting tool, breaking leaves and harvesting silkworms, strings and saplings.");
         add(ITEM_STRING + EXNTinkersTinkerItems.exnHammer.asItem() + ".description",
                 "The Ex Nihilo Hammer is a crushing tool, effective on stones, sand and gravel. It crushes blocks down to dust.");
+        add("pattern.exnihilotinkers.crook_head", "Crook Head");
   }
 }

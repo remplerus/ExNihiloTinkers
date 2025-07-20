@@ -52,8 +52,8 @@ public class ClientSetup {
     //ItemBlockRenderTypes.setRenderLayer(
     //    EXNTinkersBlocks.SKYROOT_BARREL.block(), RenderType.cutoutMipped());
 
-    SieveRender.register(EXNTinkersBlockEntites.TINKERS_SIEVES.get());
-    BarrelRender.register(EXNTinkersBlockEntites.TINKERS_BARRELS.get());
-    CrucibleRender.register(EXNTinkersBlockEntites.TINKERS_CRUCIBLES.get());
+    SieveRender.register(EXNTinkersBlockEntites.TINKERS_SIEVES.getType());
+    BarrelRender.register(EXNTinkersBlockEntites.TINKERS_BARRELS.getType());
+    CrucibleRender.register(EXNTinkersBlockEntites.TINKERS_CRUCIBLES.getType());
   }
 }

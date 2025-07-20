@@ -19,5 +19,6 @@
   "item.exnihilotinkers.exn_crook": "Crook",
   "item.exnihilotinkers.exn_crook.description": "The Crook is a precision leaf cutting tool, breaking leaves and harvesting silkworms, strings and saplings.",
   "item.exnihilotinkers.exn_hammer": "Nihilo Hammer",
-  "item.exnihilotinkers.exn_hammer.description": "The Ex Nihilo Hammer is a crushing tool, effective on stones, sand and gravel. It crushes blocks down to dust."
+  "item.exnihilotinkers.exn_hammer.description": "The Ex Nihilo Hammer is a crushing tool, effective on stones, sand and gravel. It crushes blocks down to dust.",
+  "pattern.exnihilotinkers.crook_head": "Crook Head"
 }

@@ -10,6 +10,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import novamachina.exnihilosequentia.world.level.block.SieveBlock;
 import novamachina.exnihilotinkers.common.blockentity.TinkersSieveEntity;
+import novamachina.exnihilotinkers.common.init.EXNTinkersBlockEntites;
 
 public class TinkersSieveBlock extends SieveBlock implements EntityBlock {
 
@@ -24,6 +25,6 @@ public class TinkersSieveBlock extends SieveBlock implements EntityBlock {
   @Nullable
   @Override
   public BlockEntity newBlockEntity(@Nonnull BlockPos pos, @Nonnull BlockState state) {
-    return new TinkersSieveEntity(pos, state);
+    return null;//return new TinkersSieveEntity(EXNTinkersBlockEntites.TINKERS_SIEVES.getType(), pos, state);
   }
 }

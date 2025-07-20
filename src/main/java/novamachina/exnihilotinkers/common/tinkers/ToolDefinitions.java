@@ -5,7 +5,7 @@ import slimeknights.tconstruct.library.tools.definition.ToolDefinition;
 
 public class ToolDefinitions {
 
-  public static final ToolDefinition exnCrook= ToolDefinition.create(EXNTinkersTinkerItems.exnCrook);
-  public static final ToolDefinition exnHammer = ToolDefinition.create(EXNTinkersTinkerItems.exnHammer);
+  public static final ToolDefinition exnCrook= ToolDefinition.create(EXNTinkersTinkerItems.exnCrook.getId());
+  public static final ToolDefinition exnHammer = ToolDefinition.create(EXNTinkersTinkerItems.exnHammer.getId());
 
 }

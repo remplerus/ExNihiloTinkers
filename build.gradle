@@ -150,8 +150,8 @@ dependencies {
     //modImplementation "curse.maven:exnihilo-400012:5988562"
     modImplementation "curse.maven:novacore-923669:4815411"
 
-    modImplementation "curse.maven:tinkers-74072:6266282"
-    modImplementation "curse.maven:mantle-74924:6258424"
+    modImplementation "curse.maven:tinkers-74072:6777068"
+    modImplementation "curse.maven:mantle-74924:6776978"
     // Example mod dependency using a mod jar from ./libs with a flat dir repository
     // This maps to ./libs/coolmod-${mc_version}-${coolmod_version}.jar
     // The group id is ignored when searching -- in this case, it is "blank"
@@ -206,6 +206,14 @@ publishing {
     repositories {
         maven {
             url "file://${project.projectDir}/repo"
+        }
+        maven {
+            name = "RemplersRepo"
+            url = "https://maven.rempler.com:42069/releases/"
+            credentials(PasswordCredentials)
+            authentication {
+                basic(BasicAuthentication)
+            }
         }
     }
 }

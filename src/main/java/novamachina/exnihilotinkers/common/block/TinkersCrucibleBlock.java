@@ -13,18 +13,18 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import novamachina.exnihilosequentia.world.level.block.CrucibleBlock;
 import novamachina.exnihilotinkers.common.blockentity.TinkersCrucibleEntity;
+import novamachina.exnihilotinkers.common.init.EXNTinkersBlockEntites;
 
 public class TinkersCrucibleBlock extends CrucibleBlock implements EntityBlock {
 
   public TinkersCrucibleBlock() {
-    super(BlockBehaviour.Properties.of().strength(.75F)
-            .sound(SoundType.STONE).noOcclusion());
+    super(BlockBehaviour.Properties.of().strength(.75F).sound(SoundType.STONE).noOcclusion());
   }
 
   @Nullable
   @Override
   public BlockEntity newBlockEntity(@Nonnull BlockPos pos, @Nonnull BlockState state) {
-    return new TinkersCrucibleEntity(pos, state);
+    return null; //return new TinkersCrucibleEntity(EXNTinkersBlockEntites.TINKERS_CRUCIBLES.getType(), pos, state);
   }
 
   @Nullable
@@ -33,8 +33,8 @@ public class TinkersCrucibleBlock extends CrucibleBlock implements EntityBlock {
       @Nonnull BlockState state, @Nonnull BlockEntityType<T> type) {
     if (!level.isClientSide) {
       return (level1, blockPos, blockState, t) -> {
-        if (t instanceof TinkersCrucibleEntity tile) {
-          tile.tickServer();
+        if (t instanceof TinkersCrucibleEntity be) {
+          be.tickServer();
         }
       };
     }

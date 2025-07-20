@@ -1,60 +1,45 @@
 package novamachina.exnihilotinkers.common.init;
 
-import com.mojang.logging.LogUtils;
-import net.minecraft.world.level.block.entity.BlockEntityType;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import novamachina.exnihilotinkers.common.blockentity.TinkersBarrelEntity;
 import novamachina.exnihilotinkers.common.blockentity.TinkersCrucibleEntity;
 import novamachina.exnihilotinkers.common.blockentity.TinkersSieveEntity;
 import novamachina.exnihilotinkers.common.utility.EXNTinkersConstants;
-import org.slf4j.Logger;
+import novamachina.novacore.core.registries.BlockEntityTypeRegistry;
+import novamachina.novacore.world.level.block.BlockEntityTypeDefinition;
+
+import java.util.List;
 
 public class EXNTinkersBlockEntites {
+  private static final BlockEntityTypeRegistry BLOCK_ENTITIES =
+      new BlockEntityTypeRegistry(EXNTinkersConstants.ModIds.EX_NIHILO_TINKERS);
 
-  private static final Logger logger = LogUtils.getLogger();
-  private static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES =
-      DeferredRegister.create(
-          ForgeRegistries.BLOCK_ENTITY_TYPES, EXNTinkersConstants.ModIds.EX_NIHILO_TINKERS);
-
-  public static void init(IEventBus eventBus) {
-    logger.debug("Register Block Entities");
-    BLOCK_ENTITIES.register(eventBus);
+  public static List<BlockEntityTypeDefinition<? extends BlockEntity>> getDefinitions() {
+    return BLOCK_ENTITIES.getRegistry();
   }
 
-  public static final RegistryObject<BlockEntityType<TinkersSieveEntity>> TINKERS_SIEVES =
-      BLOCK_ENTITIES.register(
+  public static final BlockEntityTypeDefinition<TinkersSieveEntity> TINKERS_SIEVES =
+      BLOCK_ENTITIES.create(
           "tinkers_sieves",
-          () ->
-              BlockEntityType.Builder.of(
-                      TinkersSieveEntity::new,
-                              EXNTinkersBlocks.BLOODSHROOM_SIEVE.block(),
-                              EXNTinkersBlocks.ENDERBARK_SIEVE.block(),
-                      EXNTinkersBlocks.GREENHEART_SIEVE.block(),
-                      EXNTinkersBlocks.SKYROOT_SIEVE.block())
-                  .build(null));
-  public static final RegistryObject<BlockEntityType<TinkersCrucibleEntity>> TINKERS_CRUCIBLES =
-      BLOCK_ENTITIES.register(
+                  TinkersSieveEntity::new,
+                  EXNTinkersBlocks.BLOODSHROOM_SIEVE,
+                  EXNTinkersBlocks.ENDERBARK_SIEVE,
+                  EXNTinkersBlocks.GREENHEART_SIEVE,
+                  EXNTinkersBlocks.SKYROOT_SIEVE);
+  public static final BlockEntityTypeDefinition<TinkersCrucibleEntity> TINKERS_CRUCIBLES =
+      BLOCK_ENTITIES.create(
           "tinkers_crucibles",
-          () ->
-              BlockEntityType.Builder.of(
-                      TinkersCrucibleEntity::new,
-                              EXNTinkersBlocks.BLOODSHROOM_CRUCIBLE.block(),
-                              EXNTinkersBlocks.ENDERBARK_CRUCIBLE.block(),
-                      EXNTinkersBlocks.GREENHEART_CRUCIBLE.block(),
-                      EXNTinkersBlocks.SKYROOT_CRUCIBLE.block())
-                  .build(null));
-  public static final RegistryObject<BlockEntityType<TinkersBarrelEntity>> TINKERS_BARRELS =
-      BLOCK_ENTITIES.register(
+                  TinkersCrucibleEntity::new,
+                  EXNTinkersBlocks.BLOODSHROOM_CRUCIBLE,
+                  EXNTinkersBlocks.ENDERBARK_CRUCIBLE,
+                  EXNTinkersBlocks.GREENHEART_CRUCIBLE,
+                  EXNTinkersBlocks.SKYROOT_CRUCIBLE);
+  public static final BlockEntityTypeDefinition<TinkersBarrelEntity> TINKERS_BARRELS =
+      BLOCK_ENTITIES.create(
           "tinkers_barrels",
-          () ->
-              BlockEntityType.Builder.of(
-                      TinkersBarrelEntity::new,
-                              EXNTinkersBlocks.BLOODSHROOM_BARREL.block(),
-                              EXNTinkersBlocks.ENDERBARK_BARREL.block(),
-                      EXNTinkersBlocks.GREENHEART_BARREL.block(),
-                      EXNTinkersBlocks.SKYROOT_BARREL.block())
-                  .build(null));
+                  TinkersBarrelEntity::new,
+                  EXNTinkersBlocks.BLOODSHROOM_BARREL,
+                  EXNTinkersBlocks.ENDERBARK_BARREL,
+                  EXNTinkersBlocks.GREENHEART_BARREL,
+                  EXNTinkersBlocks.SKYROOT_BARREL);
 }

@@ -2,7 +2,7 @@
   "parent": "exnihilosequentia:block/crucible_base",
   "render_type": "minecraft:cutout_mipped",
   "textures": {
-    "particle": "tconstruct:block/wood/bloodshroom/log",
-    "texture": "tconstruct:block/wood/bloodshroom/log"
+    "particle": "tconstruct:block/wood/enderbark/log",
+    "texture": "tconstruct:block/wood/enderbark/log"
   }
 }

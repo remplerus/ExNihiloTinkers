@@ -40,7 +40,7 @@ public class EXNTinkersBlockStates extends AbstractBlockStateGenerator {
     createCrucible(EXNTinkersBlocks.BLOODSHROOM_CRUCIBLE.block(),
             tinkersLoc("bloodshroom/log"));
     createCrucible(EXNTinkersBlocks.ENDERBARK_CRUCIBLE.block(),
-            tinkersLoc("bloodshroom/log"));
+            tinkersLoc("enderbark/log"));
     createCrucible(EXNTinkersBlocks.GREENHEART_CRUCIBLE.block(),
             tinkersLoc("greenheart/log"));
     createCrucible(EXNTinkersBlocks.SKYROOT_CRUCIBLE.block(),

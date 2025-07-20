@@ -1,6 +1,7 @@
 package novamachina.exnihilotinkers.common.init;
 
 import com.mojang.logging.LogUtils;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -13,6 +14,7 @@ import novamachina.novacore.core.IRegistry;
 import novamachina.novacore.world.item.CreativeModeTabDefinition;
 import novamachina.novacore.world.item.ItemDefinition;
 import novamachina.novacore.world.level.block.BlockDefinition;
+import novamachina.novacore.world.level.block.BlockEntityTypeDefinition;
 import org.slf4j.Logger;
 
 @Mod.EventBusSubscriber(
@@ -25,12 +27,20 @@ public class EXNTinkersInit {
   private EXNTinkersInit() {}
 
   public static void init(IEventBus eventBus) {
-    EXNTinkersBlockEntites.init(eventBus);
     EXNTinkersTinkerItems.init(eventBus);
   }
 
   public static void initItems(IRegistry<ItemDefinition<?>> registry) {
     for (ItemDefinition<?> definition : EXNTinkersItems.getDefinitions()) {
+      registry.register(definition);
+    }
+    for (BlockDefinition<?> definition : EXNTinkersBlocks.getDefinitions()) {
+      registry.register(definition);
+    }
+  }
+
+  public static void initEntities(IRegistry<BlockEntityTypeDefinition<? extends BlockEntity>> registry) {
+    for (BlockEntityTypeDefinition<? extends BlockEntity> definition : EXNTinkersBlockEntites.getDefinitions()) {
       registry.register(definition);
     }
   }
